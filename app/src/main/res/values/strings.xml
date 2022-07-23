@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">plant_detection</string>
+    <string name="browse">Browse</string>
+</resources>
