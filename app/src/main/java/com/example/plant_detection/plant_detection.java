@@ -33,7 +33,7 @@ public class plant_detection extends AppCompatActivity {
 
     Button picbtn,gallerybtn;
     ImageView imageView;
-    TextView tv_type, tv_status,tv_dis,tv_hum,tv_growth,tv_stage,tv_leaf;
+    TextView tv_type, tv_status,tv_dis,tv_hum,tv_growth,tv_last,tv_leaf;
     int IMAGE_SIZE=96;
 
     @Override
@@ -49,7 +49,7 @@ public class plant_detection extends AppCompatActivity {
         tv_dis = (TextView) findViewById(R.id.tv_dis);
         tv_hum= (TextView) findViewById(R.id.tv_hum);
         tv_growth= (TextView) findViewById(R.id.tv_growth);
-
+        tv_last = (TextView) findViewById(R.id.tv_last);
         tv_leaf= (TextView) findViewById(R.id.tv_leaf);
 
         tv_type.setText("");
@@ -57,7 +57,7 @@ public class plant_detection extends AppCompatActivity {
         tv_dis.setText("");
         tv_hum.setText("");
         tv_growth.setText("");
-
+        tv_last.setText("");
         tv_leaf.setText("");
 
 
@@ -85,7 +85,7 @@ public class plant_detection extends AppCompatActivity {
                 tv_dis.setText("");
                 tv_hum.setText("");
                 tv_growth.setText("");
-
+                tv_last.setText("");
                 tv_leaf.setText("");
 
                 Intent galleryIntent= new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -254,13 +254,13 @@ public class plant_detection extends AppCompatActivity {
 //                                +"\nleaf size: "+leaf[leafStatus];
 
 
-            tv_type.setText("Type: "+ types[maxtype]+" ");
-            tv_status.setText("Status: "+ status[maxStatus]+" ");
-            tv_dis.setText("Discoloration: "+ dis[disStatus]+" ");
-            tv_hum.setText("Humidity: "+ Humidity[HumidityStatus]+" ");
-            tv_growth.setText("Growth: "+growthStage[StageGrowthStatus] +" ");
-
-            tv_leaf.setText("leaf size: "+leaf[leafStatus]+" ");
+            tv_type.setText(" Type: "+ types[maxtype]+" ");
+            tv_status.setText(" Status: "+ status[maxStatus]+" ");
+            tv_dis.setText(" Discoloration: "+ dis[disStatus]+" ");
+            tv_hum.setText(" Humidity: "+ Humidity[HumidityStatus]+" ");
+            tv_growth.setText(" Growth: "+growthStage[StageGrowthStatus] +" ");
+            tv_last.setText(" Air Purifier: Excellent ");
+            tv_leaf.setText(" leaf size: "+leaf[leafStatus]+" ");
 
 
 //

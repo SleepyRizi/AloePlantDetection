@@ -79,7 +79,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Live"
+                        android:text="pop-ups"
                         android:textAlignment="center"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -116,7 +116,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/browse"
+                        android:text="Live "
                         android:textAlignment="center"
                         android:textStyle="bold" />
                 </LinearLayout>
