@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".campareActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/tv_class"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Name"
+                android:textAllCaps="true"
+                android:textSize="30sp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/air_box"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_airId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/baloo"
+                android:paddingTop="10dp"
+                android:paddingEnd="50sp"
+                android:text="Air Purifier"
+                android:textSize="30sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_airDis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_airId"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="34dp"
+                android:fontFamily="sans-serif"
+                android:maxWidth="250dp"
+                android:paddingEnd="20dp"
+                android:text="Air Description"
+                android:textAlignment="viewStart"
+                android:textSize="20sp">
+
+            </TextView>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/water_box"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_waterID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/baloo"
+                android:paddingTop="10dp"
+                android:paddingEnd="50sp"
+                android:text="Watering"
+                android:textSize="30sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_waterDis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_waterID"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="-18dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="sans-serif"
+                android:maxWidth="200dp"
+                android:paddingEnd="30dp"
+                android:text="Watering Description"
+                android:textColor="#000"
+                android:textSize="20sp">
+
+            </TextView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/hum_box"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_humID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/baloo"
+                android:paddingTop="10dp"
+                android:paddingEnd="50sp"
+                android:text="Humidity"
+                android:textColor="#000"
+                android:textSize="30sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_humDis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_humID"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="-14dp"
+                android:layout_marginBottom="35dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:maxWidth="250dp"
+                android:paddingEnd="90dp"
+                android:text="Humidity Description"
+                android:textColor="#000"
+                android:textSize="20sp">
+
+            </TextView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/hight_box"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_hightID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/baloo"
+                android:paddingTop="10dp"
+                android:paddingEnd="50sp"
+                android:text="Height     "
+                android:textSize="30sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_hightDis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_hightID"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="-2dp"
+                android:layout_marginEnd="-8dp"
+                android:layout_marginBottom="40dp"
+                android:fontFamily="sans-serif"
+                android:maxWidth="250dp"
+                android:paddingEnd="60dp"
+                android:text="Height Description"
+                android:textSize="20sp">
+
+            </TextView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_margin="3dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/temp_box"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_tempID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="-17dp"
+                android:fontFamily="@font/baloo"
+                android:paddingTop="10dp"
+                android:paddingEnd="50sp"
+                android:text="Temperature"
+                android:textSize="30sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_tempDis"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_tempID"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="27dp"
+                android:fontFamily="sans-serif"
+                android:maxWidth="200dp"
+                android:paddingEnd="40dp"
+                android:text="Temperature Description"
+                android:textAlignment="viewStart"
+                android:textSize="20sp">
+
+            </TextView>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

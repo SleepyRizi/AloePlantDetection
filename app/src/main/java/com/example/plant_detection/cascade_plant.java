@@ -149,7 +149,7 @@ public class cascade_plant {
         Rect[] faceArray = faces.toArray();
         for (int i=0; i< faceArray.length; i++){
             String results="";
-            Imgproc.rectangle(mat_image,faceArray[i].tl(),faceArray[i].br(),new Scalar(0,255,0,255),2);
+            //Imgproc.rectangle(mat_image,faceArray[i].tl(),faceArray[i].br(),new Scalar(0,255,0,255),2);
             Rect roi = new Rect((int)faceArray[i].tl().x,(int)faceArray[i].tl().y,
                     ((int)faceArray[i].br().x)-(int)(faceArray[i].tl().x),
                     ((int)faceArray[i].br().y)-(int)(faceArray[i].tl().y));
@@ -301,17 +301,20 @@ public class cascade_plant {
 //            ;
             //System.out.println(results);
 
+           int[] arrayx= {72,53,14,90,54,13,69};
+
             String[] parts= results.split("\n");
             int y=0;
             int y0, dy;
             y0=20; dy=4;
             int txtiter=0;
-
+            int xiter=0;
             for (String part: parts) {
 
                 y= y0+ txtiter* dy;
                 Imgproc.putText(cropped_rgba, part
-                        , new Point(10, y), 1, 1.7, new Scalar(255, 165, 0, 255), 3);
+                        , new Point(arrayx[xiter], y*3), 1, 1.7, new Scalar(255, 165, 0, 255), 3);
+                xiter+=1;
                 txtiter+=6;
             }
 

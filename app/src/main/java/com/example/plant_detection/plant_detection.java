@@ -31,7 +31,7 @@ import java.nio.ByteOrder;
 
 public class plant_detection extends AppCompatActivity {
 
-    Button picbtn,gallerybtn;
+    Button picbtn,gallerybtn,btn_compare;
     ImageView imageView;
     TextView tv_type, tv_status,tv_dis,tv_hum,tv_growth,tv_last,tv_leaf;
     int IMAGE_SIZE=96;
@@ -42,6 +42,7 @@ public class plant_detection extends AppCompatActivity {
         setContentView(R.layout.activity_plant_detection);
         picbtn = (Button) findViewById(R.id.picbtn);
         gallerybtn = (Button) findViewById(R.id.gallerybtn);
+        btn_compare = (Button) findViewById(R.id.btn_compare);
         imageView= (ImageView) findViewById(R.id.imageView);
 
         tv_type= (TextView) findViewById(R.id.tv_type);
@@ -94,6 +95,14 @@ public class plant_detection extends AppCompatActivity {
             }
 
         });
+        btn_compare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(plant_detection.this,campareActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+
+            }
+        });
+
     }
 
     @Override
