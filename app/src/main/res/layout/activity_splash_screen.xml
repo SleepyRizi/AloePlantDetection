@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fcad03"
+    android:background="#91D865"
     tools:context=".splashScreen">
+
 
     <TextView
         android:id="@+id/ivlogosplash"
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bangers"
         android:gravity="center"
-        android:text="Plant Detection"
+        android:text="Snap POT"
         android:textColor="#259B7B"
         android:textSize="68sp"
         android:transitionName="logo_text"
@@ -22,9 +23,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
-
-
+        app:layout_constraintVertical_bias="0.348" />
 
     <TextView
         android:id="@+id/tvLogoText"
@@ -32,7 +31,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bangers"
         android:gravity="center"
-        android:text="CNN Based"
+        android:text="Plant specification"
         android:textColor="#235A7A"
         android:textSize="45sp"
         android:transitionName="logo_text"
