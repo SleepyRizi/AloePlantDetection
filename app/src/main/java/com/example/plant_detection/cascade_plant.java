@@ -51,7 +51,7 @@ public class cascade_plant {
     // it is use to implement gpu in interpreter
     private GpuDelegate gpuDelegate=null;
 
-    // now define cascadeClassifier for face detection
+    // now define cascadeClassifier for plants detection
     private CascadeClassifier cascadeClassifier;
 
     cascade_plant(AssetManager assetManager, Context context, String modelPath, int inputSize) throws IOException {
@@ -125,15 +125,15 @@ public class cascade_plant {
         width= grayscaleImage.width();
 
 
-        int absoluteFaceSize=(int)(height*0.1);
+        int absolutePlantSize=(int)(height*0.1);
         // now create MatofRect to store face
-        MatOfRect faces=new MatOfRect();
+        MatOfRect plants=new MatOfRect();
         // check if cascadeClassifier is loaded or not
         if(cascadeClassifier !=null){
-            // detect face in frame
+            // detect plant in frame
             //                                  input         output
-            cascadeClassifier.detectMultiScale(grayscaleImage,faces,1.1,2,2,
-                    new Size(absoluteFaceSize,absoluteFaceSize),new Size());
+            cascadeClassifier.detectMultiScale(grayscaleImage,plants,1.1,2,2,
+                    new Size(absolutePlantSize,absolutePlantSize),new Size());
             // minimum size
         }
         String[] types = {"Aloe brevifolia", "Aloe vera", "Aloe aristata",
@@ -145,14 +145,14 @@ public class cascade_plant {
         String[] growthStage = {"mature","growing stage","germinating","flowering"};
         String[] growthType = {"succulent","perennial","shrubby","herby","arborescent"};
         String[] leaf = {"small","medium","large"};
-        int fontface = Imgproc.FONT_HERSHEY_SIMPLEX;
-        Rect[] faceArray = faces.toArray();
-        for (int i=0; i< faceArray.length; i++){
+        int fontplant = Imgproc.FONT_HERSHEY_SIMPLEX;
+        Rect[] plantsArray = plants.toArray();
+        for (int i=0; i< plantsArray.length; i++){
             String results="";
-            //Imgproc.rectangle(mat_image,faceArray[i].tl(),faceArray[i].br(),new Scalar(0,255,0,255),2);
-            Rect roi = new Rect((int)faceArray[i].tl().x,(int)faceArray[i].tl().y,
-                    ((int)faceArray[i].br().x)-(int)(faceArray[i].tl().x),
-                    ((int)faceArray[i].br().y)-(int)(faceArray[i].tl().y));
+            //Imgproc.rectangle(mat_image,plantsArray[i].tl(),plantsArray[i].br(),new Scalar(0,255,0,255),2);
+            Rect roi = new Rect((int)plantsArray[i].tl().x,(int)plantsArray[i].tl().y,
+                    ((int)plantsArray[i].br().x)-(int)(plantsArray[i].tl().x),
+                    ((int)plantsArray[i].br().y)-(int)(plantsArray[i].tl().y));
 
             Mat cropped = new Mat(grayscaleImage,roi);
             Mat cropped_rgba= new Mat(mat_image,roi);
@@ -197,7 +197,7 @@ public class cascade_plant {
             for (int typ =0; typ< 9;typ++){
                 if(plant_matrix[typ] > typeConfidence){
                     typeConfidence= plant_matrix[typ];
-                    maxtype=i;
+                    maxtype=typ;
                 }
             }
 //            String[] types = {"Aloe brevifolia", "Aloe vera", "Aloe aristata",
