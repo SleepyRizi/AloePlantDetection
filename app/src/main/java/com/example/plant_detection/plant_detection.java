@@ -13,6 +13,7 @@ import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
@@ -73,6 +74,12 @@ public class plant_detection extends AppCompatActivity {
                 }else{
                     requestPermissions(new String[]{Manifest.permission.CAMERA},100);
                 }
+                btn_compare.setVisibility(View.VISIBLE);
+//                if(tv_type.getText()==""){
+//                    btn_compare.setVisibility(View.INVISIBLE);
+//                }else{
+//                    btn_compare.setVisibility(View.VISIBLE);
+//                }
 
             }
         });
@@ -91,10 +98,23 @@ public class plant_detection extends AppCompatActivity {
 
                 Intent galleryIntent= new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(galleryIntent,1);
+                btn_compare.setVisibility(View.VISIBLE);
 //                classified.setText("");
+//                if(tv_type.getText()==""){
+//                    btn_compare.setVisibility(View.INVISIBLE);
+//                }else{
+//                    btn_compare.setVisibility(View.VISIBLE);
+//                }
+
             }
 
         });
+
+        if (tv_type.getText()==""){
+            btn_compare.setVisibility(View.INVISIBLE);
+        }
+
+
         btn_compare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

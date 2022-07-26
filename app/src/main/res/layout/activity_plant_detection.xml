@@ -9,46 +9,42 @@
 
 
     <Button
-        android:id="@+id/picbtn"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/gallerybtn"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="Take Picture   "
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_compare"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gallerybtn" />
-
-    <Button
         android:id="@+id/btn_compare"
         android:layout_width="404dp"
         android:layout_height="48dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginTop="40dp"
         android:text="Comparison   "
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="21sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/picbtn"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@+id/gallerybtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/picbtn"
-        app:layout_constraintVertical_bias="0.857" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/picbtn"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/gallerybtn"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="32dp"
+        android:text="Take Picture   "
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gallerybtn" />
 
     <Button
         android:id="@+id/gallerybtn"
@@ -56,9 +52,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="9dp"
         android:text="Launch Gallery   "
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -67,18 +63,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/picbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_compare" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="411dp"
-        android:layout_height="520dp"
+        android:layout_width="413dp"
+        android:layout_height="523dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/gallerybtn"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_compare"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
