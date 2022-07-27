@@ -36,7 +36,7 @@
             android:name=".registeruser"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".loginUser"
             android:exported="false" />
         <activity
             android:name=".campareActivity"
@@ -45,7 +45,7 @@
             android:name=".cameraActivity"
             android:exported="false" />
         <activity
-            android:name=".loginUser"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

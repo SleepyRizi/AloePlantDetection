@@ -313,7 +313,9 @@ public class cascade_plant {
 
                 y= y0+ txtiter* dy;
                 Imgproc.putText(cropped_rgba, part
-                        , new Point(arrayx[xiter], y*3), 1, 1.7, new Scalar(255, 165, 0, 255), 3);
+                        , new Point(arrayx[xiter], y*3), 1, 1.7, new Scalar(255, 165, 0, 255), 4);
+                Imgproc.putText(cropped_rgba, part
+                        , new Point(arrayx[xiter], y*3), 1, 1.7, new Scalar(0, 0, 255, 255), 2);
                 xiter+=1;
                 txtiter+=6;
             }
