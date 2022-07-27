@@ -4,6 +4,7 @@
     package="com.example.plant_detection">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -29,19 +30,22 @@
         android:theme="@style/Theme.Plant_detection"
         tools:targetApi="31">
         <activity
+            android:name=".loginUser"
+            android:exported="false" />
+        <activity
+            android:name=".registeruser"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".campareActivity"
             android:exported="false" />
         <activity
             android:name=".cameraActivity"
             android:exported="false" />
         <activity
-            android:name=".plant_detection"
-            android:exported="false" />
-        <activity
             android:name=".splashScreen"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,6 +53,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".plant_detection"
+            android:exported="false" />
 
         <uses-native-library
             android:name="libOpenCL.so"
