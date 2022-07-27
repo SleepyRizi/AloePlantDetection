@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +23,7 @@ public class registeruser extends AppCompatActivity {
     Button btn_register2;
     FirebaseAuth fAuth;
     EditText tv_email_reg,tv_password_reg;
+    ProgressBar progressBar2;
 
 
     @Override
@@ -33,6 +35,7 @@ public class registeruser extends AppCompatActivity {
         btn_register2= findViewById(R.id.btn_reg2);
         tv_email_reg=findViewById(R.id.tv_email_reg);
         tv_password_reg=findViewById(R.id.tv_password_reg);
+        progressBar2=findViewById(R.id.progressBar2);
 //
 //        if(fAuth.getCurrentUser() != null){
 //            startActivity(new Intent(getApplicationContext(),loginUser.class));
@@ -58,6 +61,7 @@ public class registeruser extends AppCompatActivity {
                     tv_password_reg.setError("Password is short");
                     return;
                 }
+               // progressBar2.setVisibility(View.VISIBLE);
                 fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
