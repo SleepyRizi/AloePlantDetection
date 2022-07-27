@@ -9,6 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseError;
+import com.google.firebase.auth.FirebaseAuth;
+
 import org.opencv.android.OpenCVLoader;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+    }
+
+    public void logout(View view) {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(),loginUser.class));
+        finish();
 
     }
 }
