@@ -174,7 +174,7 @@ public class cascade_plant {
             output_map.put(0,confidence);
 
 
-            interpreter.runForMultipleInputsOutputs(input,output_map);
+            //interpreter.runForMultipleInputsOutputs(input,output_map);
 
             Object plant_out = output_map.get(0);
             //Object plant_out = Array.get(output_map.get(0),0);

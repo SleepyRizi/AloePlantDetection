@@ -32,7 +32,7 @@ public class loginUser extends AppCompatActivity {
         tv_email=findViewById(R.id.tv_email);
         tv_password=findViewById(R.id.tv_password);
         //progressBar=findViewById(R.id.progressBar);
-        fAuth=FirebaseAuth.getInstance();
+        //fAuth=FirebaseAuth.getInstance();
 
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
