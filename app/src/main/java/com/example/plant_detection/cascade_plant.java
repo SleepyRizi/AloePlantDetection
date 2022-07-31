@@ -174,7 +174,7 @@ public class cascade_plant {
             output_map.put(0,confidence);
 
 
-            //interpreter.runForMultipleInputsOutputs(input,output_map);
+            interpreter.runForMultipleInputsOutputs(input,output_map);
 
             Object plant_out = output_map.get(0);
             //Object plant_out = Array.get(output_map.get(0),0);
@@ -301,7 +301,7 @@ public class cascade_plant {
 //            ;
             //System.out.println(results);
 
-           int[] arrayx= {72,53,14,90,54,13,69};
+           int[] arrayx= {42,23,14,20,24,13,42};
 
             String[] parts= results.split("\n");
             int y=0;
@@ -317,7 +317,7 @@ public class cascade_plant {
                 Imgproc.putText(cropped_rgba, part
                         , new Point(arrayx[xiter], y*3), 1, 1.7, new Scalar(0, 0, 255, 255), 2);
                 xiter+=1;
-                txtiter+=6;
+                txtiter+=3;
             }
 
 

@@ -84,6 +84,8 @@ public class plant_detection extends AppCompatActivity {
             }
         });
         gallerybtn.setOnClickListener(new View.OnClickListener() {
+            // HAAR featursd and HOG
+            //
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
