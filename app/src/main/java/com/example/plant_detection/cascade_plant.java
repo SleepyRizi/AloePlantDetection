@@ -132,7 +132,7 @@ public class cascade_plant {
         if(cascadeClassifier !=null){
             // detect plant in frame
             //                                  input         output
-            cascadeClassifier.detectMultiScale(grayscaleImage,plants,1.1,2,2,
+            cascadeClassifier.detectMultiScale(grayscaleImage,plants,1.1, 1,2,
                     new Size(absolutePlantSize,absolutePlantSize),new Size());
             // minimum size
         }
@@ -301,7 +301,7 @@ public class cascade_plant {
 //            ;
             //System.out.println(results);
 
-           int[] arrayx= {42,23,14,20,24,13,42};
+           int[] arrayx= {0,0,0,0,0,0,0};
 
             String[] parts= results.split("\n");
             int y=0;
@@ -313,10 +313,10 @@ public class cascade_plant {
 
                 y= y0+ txtiter* dy;
                 Imgproc.putText(cropped_rgba, part
-                        , new Point(arrayx[xiter], y*3), 1, 1.7, new Scalar(255, 165, 0, 255), 4);
+                        , new Point(arrayx[xiter], y*3), 1, 1.4, new Scalar(255, 165, 0, 255), 4);
                 Imgproc.putText(cropped_rgba, part
-                        , new Point(arrayx[xiter], y*3), 1, 1.7, new Scalar(0, 0, 255, 255), 2);
-                xiter+=1;
+                        , new Point(arrayx[xiter], y*3), 1, 1.4, new Scalar(0, 0, 255, 255), 2);
+                //xiter+=1;
                 txtiter+=3;
             }
 
