@@ -34,7 +34,7 @@
    CascadeClassifier::detectMultiScale. For example, decrease the value of the
    minNeighbors argument. You do not need to use a human face detector to
    cross-check the positives anymore.
- 2014-04-25: First release (at https://bitbucket.org/Joe_Howse/angora-blue)
+ 2014-04-: First release (at https://bitbucket.org/Joe_Howse/angora-blue)
 
  //////////////////////////////////////////////////////////////////////////
  | Contributors License Agreement

@@ -1,5 +1,7 @@
 package com.example.plant_detection;
 
+import static com.example.plant_detection.cascade_plant.details;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -7,12 +9,15 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceView;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -22,15 +27,17 @@ import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class cameraActivity extends Activity implements CameraBridgeViewBase.CvCameraViewListener2{
 
     private static final String TAG="MainActivity";
-
+    //public static String[] details;
     private Mat mRgba;
     private Mat mGray;
     private CameraBridgeViewBase mOpenCvCameraView;
     private cascade_plant cascade_plant;
+    Button btn_liveDetails;
     
     private BaseLoaderCallback mLoaderCallback =new BaseLoaderCallback(this) {
         @Override
@@ -71,10 +78,14 @@ public class cameraActivity extends Activity implements CameraBridgeViewBase.CvC
 
         setContentView(R.layout.activity_camera);
 
+
+
         mOpenCvCameraView=(CameraBridgeViewBase) findViewById(R.id.frame_Surface);
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
         mOpenCvCameraView.setCameraPermissionGranted();
         mOpenCvCameraView.setCvCameraViewListener(this);
+        btn_liveDetails=findViewById(R.id.btn_liveDetails);
+
 
         try {
             int inputSize = 96;
@@ -84,6 +95,24 @@ public class cameraActivity extends Activity implements CameraBridgeViewBase.CvC
         catch (IOException e){
             e.printStackTrace();
         }
+//        details = new String[] {};
+
+
+        btn_liveDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(details[0] != null) {
+                    Intent intent = new Intent(cameraActivity.this, moredetails.class);
+                    intent.putExtra("details_array", details);
+                    startActivity(intent);
+//                for(int det=0;det<2;det++){
+//                    System.out.println(details[det]);
+//                }
+                }
+
+            }
+        });
+
     }
 
     @Override

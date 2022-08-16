@@ -1,5 +1,7 @@
 package com.example.plant_detection;
 
+import static com.example.plant_detection.cameraActivity.*;
+
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
@@ -40,13 +42,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class cascade_plant {
+public class cascade_plant<details> {
     private Interpreter interpreter;
     // define input size
     private int INPUT_SIZE;
     // define height and width of original frame
     private int height=0;
     private int width=0;
+    public static String[] details;
+
     // now define Gpudelegate
     // it is use to implement gpu in interpreter
     private GpuDelegate gpuDelegate=null;
@@ -56,6 +60,7 @@ public class cascade_plant {
 
     cascade_plant(AssetManager assetManager, Context context, String modelPath, int inputSize) throws IOException {
         INPUT_SIZE=inputSize;
+
         // set GPU for the interpreter
 
         Interpreter.Options options=new Interpreter.Options();
@@ -136,6 +141,7 @@ public class cascade_plant {
                     new Size(absolutePlantSize,absolutePlantSize),new Size());
             // minimum size
         }
+        details= new String[2];
         String[] types = {"Aloe brevifolia", "Aloe vera", "Aloe aristata",
                 "Aloe x principis", "Aloe viridiflora", "Aloe Barbedensis",
                 "Aloe Broomii", "Aloe Striatula", "Aloe massawana"};
@@ -298,6 +304,16 @@ public class cascade_plant {
                     +"\n Growth: "+ growthStage[StageGrowthStatus]
                     +"\n Growth Type: "+ growthType[TypeGrowthStatus]
                     +"\n leaf size: "+leaf[leafStatus];
+            //adding values to string
+
+            details[0]=types[maxtype];
+            details[1]=status[maxStatus];
+//            details[2]=dis[disStatus];
+//            details[3]= Humidity[HumidityStatus];
+//            details[4]=growthStage[StageGrowthStatus];
+//            details[5]= growthType[TypeGrowthStatus];
+//            details[6]=leaf[leafStatus];
+
 //            ;
             //System.out.println(results);
 
